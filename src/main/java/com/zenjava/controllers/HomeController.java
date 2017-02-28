@@ -1,9 +1,6 @@
-package com.zenjava;
+package com.zenjava.controllers;
 
-import javafx.beans.binding.ListBinding;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.scene.input.MouseButton;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -42,9 +39,7 @@ public class HomeController {
         List<String> list = new ArrayList<>();
         list.add("e");
         list.add("f");
-        productPrice.setLab
-
-        //choiceBox = new ChoiceBox(FXCollections.observableArrayList(list));
+        choiceBox = new ChoiceBox(FXCollections.observableArrayList(list));
     }
 
     public void showBox() {
