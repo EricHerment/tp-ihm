@@ -4,7 +4,7 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.StringProperty;
 
 /**
- * Created by eric on 04/03/2017.
+ * Model for the products displayed in the store
  */
 public class Product {
 
