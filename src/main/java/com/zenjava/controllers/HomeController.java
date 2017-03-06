@@ -1,6 +1,7 @@
 package com.zenjava.controllers;
 
 
+import com.zenjava.model.Product;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
@@ -31,6 +32,12 @@ public class HomeController {
     @FXML
     public void initialize() {
 
+    }
+
+    public void showProductDetails(Product product) {
+        productName.setText(product.getName());
+        productDescription.setText(product.getDescription());
+        productPrice.setText(Integer.toString(product.getPrice()));
     }
 
 

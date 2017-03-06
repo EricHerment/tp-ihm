@@ -1,6 +1,7 @@
 package com.zenjava.model;
 
 import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 /**
@@ -12,9 +13,9 @@ public class Product {
     private StringProperty description;
     private IntegerProperty price;
 
-    public Product(StringProperty name, StringProperty description, IntegerProperty price) {
-        this.name = name;
-        this.description = description;
+    public Product(String name, String description, IntegerProperty price) {
+        this.name = new SimpleStringProperty(name);
+        this.description = new SimpleStringProperty(description);
         this.price = price;
     }
 
@@ -37,7 +38,6 @@ public class Product {
     public void setDescription(String description) {
         this.description.set(description);
     }
-
 
     public void setPrice(int price) {
         this.price.set(price);
