@@ -37,6 +37,7 @@ public class HomeController {
 
     @FXML
     private void initialize() {
+
     }
 
     public void showProductDetails(Product product) {
@@ -54,6 +55,4 @@ public class HomeController {
         this.mainApp = mainApp;
         listView.setItems(mainApp.getObservableList());
     }
-
-
 }
