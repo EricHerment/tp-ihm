@@ -92,6 +92,6 @@
       </HBox>
    </center>
    <left>
-      <ChoiceBox fx:id="choiceBox" onMouseClicked="#showBox" prefHeight="14.0" prefWidth="150.0" style="-fx-background-color: #aaccee;" BorderPane.alignment="TOP_CENTER" />
+      <ChoiceBox fx:id="choiceBox" prefHeight="14.0" prefWidth="150.0" style="-fx-background-color: #aaccee;" BorderPane.alignment="TOP_CENTER" />
    </left>
 </BorderPane>

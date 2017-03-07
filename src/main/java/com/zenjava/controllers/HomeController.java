@@ -1,6 +1,7 @@
 package com.zenjava.controllers;
 
 
+import com.zenjava.MainApp;
 import com.zenjava.model.Product;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
@@ -15,7 +16,7 @@ import javafx.scene.control.ListView;
 public class HomeController {
 
     @FXML
-    private ListView<String> listView;
+    private ListView<Product> listView;
 
     @FXML
     private Label productName;
@@ -29,15 +30,29 @@ public class HomeController {
     @FXML
     private ChoiceBox<String> choiceBox;
 
-    @FXML
-    public void initialize() {
+    private MainApp mainApp;
 
+    public HomeController() {
+    }
+
+    @FXML
+    private void initialize() {
     }
 
     public void showProductDetails(Product product) {
         productName.setText(product.getName());
         productDescription.setText(product.getDescription());
         productPrice.setText(Integer.toString(product.getPrice()));
+    }
+
+    /**
+     * Is called by the main application to give a reference back to itself.
+     *
+     * @param mainApp
+     */
+    public void setMainApp(MainApp mainApp) {
+        this.mainApp = mainApp;
+        listView.setItems(mainApp.getObservableList());
     }
 
 
