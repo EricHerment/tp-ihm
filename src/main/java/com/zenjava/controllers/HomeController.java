@@ -57,6 +57,7 @@ public class HomeController {
     }
 
     private void showProductDetails(Product product) {
+        //Faire un appel a la vue a la place
         productName.setText(product.getName());
         productDescription.setText(product.getDescription());
         productPrice.setText(Integer.toString(product.getPrice()));
