@@ -1,4 +1,4 @@
-package com.zenjava;
+package com.zenjava.util;
 
 import com.zenjava.model.Product;
 import javafx.scene.control.ListCell;
@@ -8,7 +8,7 @@ import javafx.util.Callback;
 
 
 /**
- * Created by eric on 07/03/2017.
+ * Returns the list of cell
  */
 public class ProductCellFactory implements Callback<ListView<Product>, ListCell<Product>>{
 

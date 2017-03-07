@@ -3,6 +3,8 @@ package com.zenjava.controllers;
 
 import com.zenjava.MainApp;
 import com.zenjava.model.Product;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
@@ -37,8 +39,15 @@ public class HomeController {
 
     @FXML
     private void initialize() {
-
+        listView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Product>() {
+            @Override
+            public void changed(ObservableValue<? extends Product> observable, Product oldValue, Product newValue) {
+                showProductDetails(newValue);
+            }
+        });
     }
+
+
 
     public void showProductDetails(Product product) {
         productName.setText(product.getName());
