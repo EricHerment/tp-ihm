@@ -10,7 +10,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -25,10 +24,12 @@ public class MainApp extends Application {
     private ObservableList<String> choiceList = FXCollections.observableArrayList();
 
     public MainApp() {
-        listView.add(new Product("Produit", "lol", new SimpleIntegerProperty(100),
-                new Image(getClass().getResourceAsStream("/images/google_pixel.png"))));
-        choiceList.add("Salut");
-        choiceList.add("Mdr");
+        listView.add(new Product("Ceci est le nom du produit", "Ceci est la description du produit", new SimpleIntegerProperty(100),
+                new Image(getClass().getResourceAsStream("/images/google_pixel.png")), "Categorie 1"));
+        listView.add(new Product("Ceci est le nom du produit bis", "Ceci est la description du produit bis", new SimpleIntegerProperty(200),
+                new Image(getClass().getResourceAsStream("/images/one_plus3.jpg")), "Categorie 1"));
+        choiceList.add("Categorie 1");
+        choiceList.add("Categorie 2");
     }
 
     public void start(Stage stage) throws Exception {

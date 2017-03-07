@@ -1,7 +1,6 @@
 package com.zenjava.model;
 
 import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.image.Image;
@@ -17,11 +16,12 @@ public class Product {
     private Image image;
     private String category;
 
-    public Product(String name, String description, IntegerProperty price, Image image) {
+    public Product(String name, String description, IntegerProperty price, Image image, String category) {
         this.name = new SimpleStringProperty(name);
         this.description = new SimpleStringProperty(description);
         this.price = price;
         this.image = image;
+        this.category = category;
     }
 
     public String getName() {
@@ -68,4 +68,7 @@ public class Product {
         this.image = image;
     }
 
+    public String getCategory() {
+        return category;
+    }
 }
