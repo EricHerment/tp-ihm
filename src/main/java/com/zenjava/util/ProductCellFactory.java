@@ -14,6 +14,6 @@ public class ProductCellFactory implements Callback<ListView<Product>, ListCell<
 
     @Override
     public ListCell<Product> call(ListView<Product> param) {
-        return null;
+        return new ProductCell();
     }
 }

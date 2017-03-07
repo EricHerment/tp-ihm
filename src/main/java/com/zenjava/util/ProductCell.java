@@ -9,8 +9,14 @@ import javafx.scene.control.ListCell;
 public class ProductCell extends ListCell<Product> {
 
     @Override
-    public void updateItem(Product item, boolean empty) {
-
+    public void updateItem(Product product, boolean empty) {
+            super.updateItem(product, empty);
+            String name = "";
+            if (product != null && !empty) {
+                name = product.getName();
+            }
+            this.setText(name);
+            setGraphic(null);
     }
 
 }

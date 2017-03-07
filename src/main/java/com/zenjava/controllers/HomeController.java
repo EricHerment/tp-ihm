@@ -3,6 +3,7 @@ package com.zenjava.controllers;
 
 import com.zenjava.MainApp;
 import com.zenjava.model.Product;
+import com.zenjava.util.ProductCellFactory;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -73,6 +74,7 @@ public class HomeController {
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;
         listView.setItems(mainApp.getObservableList());
+        listView.setCellFactory(new ProductCellFactory());
         choiceBox.setItems(mainApp.getChoiceList());
         choiceBox.setValue(mainApp.getChoiceList().get(0));
     }
