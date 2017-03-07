@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.zenjava.controllers.HomeController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.zenjava.controllers.HomeController">
    <top>
       <HBox prefHeight="119.0" prefWidth="1100.0" style="-fx-background-color: #eee;" BorderPane.alignment="CENTER">
          <children>
@@ -55,11 +55,12 @@
    <bottom>
       <HBox prefHeight="100.0" prefWidth="802.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox prefHeight="79.0" prefWidth="368.0">
+            <VBox alignment="CENTER" prefHeight="79.0" prefWidth="368.0">
                <children>
                   <Label alignment="CENTER" prefHeight="51.0" prefWidth="371.0" style="-fx-background-color: #eee;" text="Numero Telephone " textAlignment="CENTER" wrapText="true" />
                   <Label alignment="CENTER" prefHeight="49.0" prefWidth="371.0" text="Adresse du magasin" wrapText="true" />
                   <Hyperlink alignment="CENTER" prefHeight="51.0" prefWidth="371.0" style="-fx-background-color: #eee;" text="Lien site web " textAlignment="CENTER" />
+                  <Label text="contact" />
                </children>
             </VBox>
             <AnchorPane HBox.hgrow="ALWAYS">
