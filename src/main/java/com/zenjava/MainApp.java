@@ -8,6 +8,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -17,12 +19,16 @@ import java.io.IOException;
 public class MainApp extends Application {
 
     private Stage primaryStage;
-    private BorderPane rootLayout;
+    private AnchorPane rootLayout;
 
-    private ObservableList<Product> observableList = FXCollections.observableArrayList();
+    private ObservableList<Product> listView = FXCollections.observableArrayList();
+    private ObservableList<String> choiceList = FXCollections.observableArrayList();
 
     public MainApp() {
-        observableList.add(new Product("Produit", "lol", new SimpleIntegerProperty(100)));
+        listView.add(new Product("Produit", "lol", new SimpleIntegerProperty(100),
+                new Image(getClass().getResourceAsStream("/images/google_pixel.png"))));
+        choiceList.add("Salut");
+        choiceList.add("Mdr");
     }
 
     public void start(Stage stage) throws Exception {
@@ -38,8 +44,7 @@ public class MainApp extends Application {
             FXMLLoader loader = new FXMLLoader();
             rootLayout = loader.load(getClass().getResourceAsStream(fxmlFile));
 
-            Scene scene = new Scene(rootLayout, 1100, 800);
-            //scene.getStylesheets().add("/styles/styles.css");
+            Scene scene = new Scene(rootLayout, 1200, 800);
             primaryStage.setScene(scene);
             primaryStage.show();
 
@@ -55,6 +60,10 @@ public class MainApp extends Application {
     }
 
     public ObservableList<Product> getObservableList() {
-        return observableList;
+        return listView;
+    }
+
+    public ObservableList<String> getChoiceList() {
+        return choiceList;
     }
 }
