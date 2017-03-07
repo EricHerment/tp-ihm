@@ -60,6 +60,7 @@ public class HomeController {
         productName.setText(product.getName());
         productDescription.setText(product.getDescription());
         productPrice.setText(Integer.toString(product.getPrice()));
+        productImage.setImage(product.getImage());
     }
 
     /**
