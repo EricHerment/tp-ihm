@@ -32,6 +32,9 @@ public class HomeController {
     @FXML
     private ChoiceBox<String> choiceBox;
 
+    @FXML
+    private Label contact;
+
     private MainApp mainApp;
 
     public HomeController() {

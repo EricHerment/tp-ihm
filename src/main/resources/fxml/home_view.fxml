@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
@@ -57,10 +59,16 @@
          <children>
             <VBox alignment="CENTER" prefHeight="79.0" prefWidth="368.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="51.0" prefWidth="371.0" style="-fx-background-color: #eee;" text="Numero Telephone " textAlignment="CENTER" wrapText="true" />
+                  <Label alignment="CENTER" prefHeight="51.0" prefWidth="371.0" style="-fx-background-color: #eee;" text="Numero Telephone " textAlignment="CENTER" wrapText="true">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin></Label>
                   <Label alignment="CENTER" prefHeight="49.0" prefWidth="371.0" text="Adresse du magasin" wrapText="true" />
                   <Hyperlink alignment="CENTER" prefHeight="51.0" prefWidth="371.0" style="-fx-background-color: #eee;" text="Lien site web " textAlignment="CENTER" />
-                  <Label text="contact" />
+                  <Label fx:id="contact" text="contact">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor></Label>
                </children>
             </VBox>
             <AnchorPane HBox.hgrow="ALWAYS">
