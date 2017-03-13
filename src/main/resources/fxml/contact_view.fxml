@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="com.zenjava.controllers.ContactController" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.zenjava.controllers.ContactController">
    <children>
       <Label layoutX="215.0" layoutY="14.0" text="Nous contacter">
          <font>
@@ -32,15 +31,15 @@
             <Label text="Adresse mail :" translateX="80.0" translateY="-4.0" />
             <Label text="Sujet :" translateX="120.0" translateY="-3.0" GridPane.rowIndex="1" />
             <Label text="Message :" textAlignment="RIGHT" translateX="100.0" translateY="-55.0" GridPane.rowIndex="2" />
-            <TextField prefHeight="124.0" prefWidth="223.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField prefHeight="25.0" prefWidth="283.0" GridPane.columnIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="message" prefHeight="124.0" prefWidth="223.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="adresse" prefHeight="25.0" prefWidth="283.0" GridPane.columnIndex="1" />
+            <TextField fx:id="sujet" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
       </GridPane>
       <ButtonBar layoutX="146.0" layoutY="313.0" prefHeight="40.0" prefWidth="200.0">
         <buttons>
-          <Button mnemonicParsing="false" text="Envoyer" />
-            <Button mnemonicParsing="false" text="Annuler" />
+          <Button fx:id="envoyer" mnemonicParsing="false" onAction="#envoyerButton" text="Envoyer" />
+            <Button fx:id="annuler" mnemonicParsing="false" onAction="#annulerButton" text="Annuler" />
         </buttons>
       </ButtonBar>
    </children>
