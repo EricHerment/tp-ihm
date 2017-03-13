@@ -66,6 +66,7 @@ public class HomeController {
                     productName.setText("WESH");
             }
         });
+
     }
 
     private void showProductDetails(Product product) {
@@ -88,16 +89,15 @@ public class HomeController {
         choiceBox.setItems(mainApp.getChoiceList());
         choiceBox.setValue(mainApp.getChoiceList().get(0));
     }
+
     @FXML
-    public void handleButtonAction(ActionEvent event) throws IOException {
+    public void handleButtonAction() throws IOException {
         String fxmlFile = "/fxml/contact_view.fxml";
         FXMLLoader loader = new FXMLLoader();
         Scene scene2 = new Scene(loader.load(getClass().getResourceAsStream(fxmlFile)),1200,800);
         Stage stage = new Stage();
         stage.setTitle("contact");
         stage.setScene(scene2);
-        if (event.getSource()==contactButton){
-            stage.show();
-        }
+        stage.show();
     }
 }
