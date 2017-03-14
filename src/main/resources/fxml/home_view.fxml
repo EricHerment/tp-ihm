@@ -59,7 +59,7 @@
          <children>
             <HBox prefHeight="100.0" prefWidth="802.0" AnchorPane.bottomAnchor="0.0">
                <children>
-                  <VBox alignment="CENTER" prefHeight="79.0" prefWidth="368.0">
+                  <VBox alignment="CENTER" prefHeight="100.0" prefWidth="460.0">
                      <children>
                         <Label alignment="CENTER" prefHeight="51.0" prefWidth="371.0" style="-fx-background-color: #eee;" text="Numero Telephone " textAlignment="CENTER" wrapText="true" />
                         <Button mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="61.0" text="Contact" />
