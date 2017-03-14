@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by eric on 13/03/2017.
@@ -37,11 +38,19 @@ public class ProductParser {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     public ArrayList<Product> getProducts() throws IOException {
         parser("product/products.json");
         return products;
+    }
+
+    public List<String> getCategories() throws IOException {
+        List<String> categories = new ArrayList<>();
+        for (Product product : getProducts()) {
+            if (!categories.contains(product.getCategory()))
+                categories.add(product.getCategory());
+        }
+        return categories;
     }
 }

@@ -70,8 +70,13 @@ public class HomeController {
                 showProductDetails(newValue);
             }
         });
-
-       /* choiceBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+        try {
+            choiceList.setAll(new ProductParser().getCategories());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        choiceBox.setItems(choiceList);
+        /*choiceBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 if (newValue.equals("Categorie 2")) {
@@ -79,7 +84,7 @@ public class HomeController {
                     mainApp.getObservableList().clear();
                     mainApp.getObservableList().setAll(mainApp.pList2);
                 }
-                if (newValue.equals("Categorie 1")){/*
+                if (newValue.equals("Categorie 1")){
                     showProductDetails((mainApp.pList1.get(0)));
                     mainApp.getObservableList().clear();
                     mainApp.getObservableList().setAll(mainApp.pList1);

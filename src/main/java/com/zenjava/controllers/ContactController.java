@@ -35,7 +35,6 @@ public class ContactController {
 
     }
 
-
     @FXML
     private void envoyerButton(){
         Alert alert;
