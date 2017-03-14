@@ -57,7 +57,7 @@
    <bottom>
       <AnchorPane BorderPane.alignment="CENTER">
          <children>
-            <HBox prefHeight="100.0" prefWidth="802.0">
+            <HBox prefHeight="100.0" prefWidth="802.0" AnchorPane.bottomAnchor="0.0">
                <children>
                   <VBox alignment="CENTER" prefHeight="79.0" prefWidth="368.0">
                      <children>
@@ -84,15 +84,15 @@
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
             <ImageView fx:id="productImage" fitHeight="333.0" fitWidth="317.0" pickOnBounds="true" />
-            <VBox alignment="TOP_CENTER" prefHeight="492.0" prefWidth="133.0">
+            <VBox alignment="TOP_CENTER" prefHeight="532.0" prefWidth="539.0">
                <children>
-                  <Label fx:id="productName" alignment="CENTER" prefHeight="0.0" prefWidth="133.0" text="Nom du produit" wrapText="true">
+                  <Label fx:id="productName" alignment="CENTER" prefHeight="164.0" prefWidth="536.0" text="Nom du produit" wrapText="true">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Label>
-                  <Label fx:id="productDescription" alignment="CENTER" prefHeight="234.0" prefWidth="202.0" text="Description" wrapText="true" />
-                  <Label fx:id="productPrice" alignment="CENTER" prefHeight="76.0" prefWidth="202.0" wrapText="true" />
+                  <Label fx:id="productDescription" alignment="CENTER" prefHeight="234.0" prefWidth="542.0" text="Description" wrapText="true" />
+                  <Label fx:id="productPrice" alignment="CENTER" prefHeight="135.0" prefWidth="539.0" text="prix" wrapText="true" />
                </children>
             </VBox>
          </children>

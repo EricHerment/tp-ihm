@@ -61,8 +61,16 @@ public class HomeController {
         choiceBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                if (newValue.equals("Categorie 2"))
-                    productName.setText("WESH");
+                if (newValue.equals("Categorie 2")) {
+                    showProductDetails(mainApp.pList2.get(0));
+                    mainApp.getObservableList().clear();
+                    mainApp.getObservableList().setAll(mainApp.pList2);
+                }
+                if (newValue.equals("Categorie 1")){
+                    showProductDetails((mainApp.pList1.get(0)));
+                    mainApp.getObservableList().clear();
+                    mainApp.getObservableList().setAll(mainApp.pList1);
+                }
             }
         });
 
