@@ -19,21 +19,16 @@ public class MainApp extends Application {
 
     private Stage primaryStage;
     private BorderPane rootLayout;
-    public ObservableList<Product> pList1 = FXCollections.observableArrayList();
-    public ObservableList<Product> pList2 = FXCollections.observableArrayList();
-
-    private ObservableList<Product> listView = FXCollections.observableArrayList();
-    private ObservableList<String> choiceList = FXCollections.observableArrayList();
 
     public MainApp() {
-        pList1.add(new Product("Ceci est le nom du produit", "Ceci est la description du produit", new SimpleIntegerProperty(100),
+        /*listView.add(new Product("Ceci est le nom du produit", "Ceci est la description du produit", "100€",
                 new Image(getClass().getResourceAsStream("/images/google_pixel.png")), "Categorie 1"));
-        pList1.add(new Product("Ceci est le nom du produit bis", "Ceci est la description du produit bis", new SimpleIntegerProperty(200),
+        listView.add(new Product("Ceci est le nom du produit bis", "Ceci est la description du produit bis", "200€",
                 new Image(getClass().getResourceAsStream("/images/one_plus3.jpg")), "Categorie 1"));
-        pList2.add(new Product("Produit cat2","description",new SimpleIntegerProperty(100),new Image(getClass().getResourceAsStream("/images/google_pixel.png")), "Categorie 1"));
+        listView.add(new Product("Produit cat2","description", "100€",new Image(getClass().getResourceAsStream("/images/google_pixel.png")), "Categorie 1"));
         choiceList.add("Categorie 1");
-        choiceList.add("Categorie 2");
-        listView.setAll(pList1);
+        choiceList.add("Categorie 2");*/
+
     }
 
     public void start(Stage stage) throws Exception {
@@ -62,13 +57,5 @@ public class MainApp extends Application {
 
     public static void main(String[] args) throws Exception {
         launch(args);
-    }
-
-    public ObservableList<Product> getObservableList() {
-        return listView;
-    }
-
-    public ObservableList<String> getChoiceList() {
-        return choiceList;
     }
 }
