@@ -1,0 +1,7 @@
+[
+  { "name":"nom du produit" , "desc":"description produit","prix":"100 €", "image": "/images/google_pixel.png", "category": "categorie 1"  },
+  { "name":"nom du produit 2" , "desc":"description produit 2","prix":"200 €", "image": "/images/one_plus3.jpg", "category": "categorie 1"}
+
+
+
+]
