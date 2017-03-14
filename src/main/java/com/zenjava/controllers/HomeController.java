@@ -4,8 +4,11 @@ package com.zenjava.controllers;
 import com.zenjava.MainApp;
 import com.zenjava.model.Product;
 import com.zenjava.util.ProductCellFactory;
+import com.zenjava.util.ProductParser;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -51,6 +54,16 @@ public class HomeController {
 
     @FXML
     private void initialize() {
+        ObservableList<Product> productsList = FXCollections.observableArrayList();
+        ObservableList<String> choiceList = FXCollections.observableArrayList();
+        try {
+            productsList.setAll(new ProductParser().getProducts());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        listView.setItems(productsList);
+        listView.setCellFactory(new ProductCellFactory());
         listView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Product>() {
             @Override
             public void changed(ObservableValue<? extends Product> observable, Product oldValue, Product newValue) {
@@ -58,7 +71,7 @@ public class HomeController {
             }
         });
 
-        choiceBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+       /* choiceBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 if (newValue.equals("Categorie 2")) {
@@ -66,21 +79,20 @@ public class HomeController {
                     mainApp.getObservableList().clear();
                     mainApp.getObservableList().setAll(mainApp.pList2);
                 }
-                if (newValue.equals("Categorie 1")){
+                if (newValue.equals("Categorie 1")){/*
                     showProductDetails((mainApp.pList1.get(0)));
                     mainApp.getObservableList().clear();
                     mainApp.getObservableList().setAll(mainApp.pList1);
                 }
             }
-        });
+        });*/
 
     }
 
     private void showProductDetails(Product product) {
-        //Faire un appel a la vue a la place
         productName.setText(product.getName());
         productDescription.setText(product.getDescription());
-        productPrice.setText(Integer.toString(product.getPrice()));
+        productPrice.setText(product.getPrice());
         productImage.setImage(product.getImage());
     }
 
@@ -91,10 +103,10 @@ public class HomeController {
      */
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;
-        listView.setItems(mainApp.getObservableList());
-        listView.setCellFactory(new ProductCellFactory());
-        choiceBox.setItems(mainApp.getChoiceList());
-        choiceBox.setValue(mainApp.getChoiceList().get(0));
+        //listView.setItems(mainApp.getObservableList());
+        //listView.setCellFactory(new ProductCellFactory());
+        //choiceBox.setItems(mainApp.getChoiceList());
+        //choiceBox.setValue(mainApp.getChoiceList().get(0));
     }
 
     @FXML
