@@ -49,7 +49,7 @@ public class MainApp extends Application {
             primaryStage.show();
 
             HomeController homeController = loader.getController();
-            homeController.setMainApp(this);
+
         } catch (IOException e) {
             e.printStackTrace();
         }

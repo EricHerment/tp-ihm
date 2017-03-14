@@ -49,9 +49,6 @@ public class HomeController {
 
     private MainApp mainApp;
 
-    public HomeController() {
-    }
-
     @FXML
     private void initialize() {
         ObservableList<Product> productsList = FXCollections.observableArrayList();
@@ -101,18 +98,7 @@ public class HomeController {
         productImage.setImage(product.getImage());
     }
 
-    /**
-     * Is called by the main application to give a reference back to itself.
-     *
-     * @param mainApp
-     */
-    public void setMainApp(MainApp mainApp) {
-        this.mainApp = mainApp;
-        //listView.setItems(mainApp.getObservableList());
-        //listView.setCellFactory(new ProductCellFactory());
-        //choiceBox.setItems(mainApp.getChoiceList());
-        //choiceBox.setValue(mainApp.getChoiceList().get(0));
-    }
+
 
     @FXML
     public void handleButtonAction() throws IOException {

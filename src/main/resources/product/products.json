@@ -1,10 +1,7 @@
 [
+  { "name":"Figurine de Timmy" , "desc":"Figurine du personnage de Timmy, tiré de la série South Park","prix":"100 €", "image": "/images/timmy.jpg", "category": "South Park"  },
+  { "name":"Figurine de Sadam et Satan" , "desc":"Figurines des personnage de Satan et Sadam, tirés de la série South Park","prix":"100 €", "image": "/images/satan.jpg", "category": "South Park"  },
+  { "name":"Figurine de Ike" , "desc":"Figurine du personnage de Ike, tiré de la série South Park","prix":"100 €", "image": "/images/ike.jpg", "category": "South Park"  },
   { "name":"nom du produit" , "desc":"description produit","prix":"100 €", "image": "/images/google_pixel.png", "category": "categorie 1"  },
-  { "name":"nom du produit 2" , "desc":"description produit 2","prix":"200 €", "image": "/images/one_plus3.jpg", "category": "categorie 1"},
-  { "name":"Figurine de Timmy" , "desc":"Figurine du personnage de Timmy, tiré de la série South Park","prix":"100 €", "image": "/images/timmy.jpg", "category": "categorie 2"  },
-  { "name":"Figurine de Sadam et Satan" , "desc":"Figurines des personnage de Satan et Sadam, tirés de la série South Park","prix":"100 €", "image": "/images/satan.jpg", "category": "categorie 2"  },
-  { "name":"Figurine de Ike" , "desc":"Figurine du personnage de Ike, tiré de la série South Park","prix":"100 €", "image": "/images/ike.jpg", "category": "categorie 2"  }
-
-
-
+  { "name":"nom du produit 2" , "desc":"description produit 2","prix":"200 €", "image": "/images/one_plus3.jpg", "category": "categorie 1"}
 ]

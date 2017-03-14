@@ -16,7 +16,6 @@ public class ProductCell extends ListCell<Product> {
                 name = product.getName();
             }
             this.setText(name);
-            setGraphic(null);
     }
 
 }
