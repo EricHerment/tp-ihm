@@ -91,6 +91,10 @@ public class HomeController {
 
     }
 
+    /**
+     * permet de set toutes les caractéristiques d'un produit donné
+     * @param product
+     */
     private void showProductDetails(Product product) {
         productName.setText(product.getName());
         productDescription.setText(product.getDescription());
@@ -99,7 +103,10 @@ public class HomeController {
     }
 
 
-
+    /**
+     * action effectué lorsqu'on appuie sur le bouton "contact", ça ouvre une nouvelle scène
+     * @throws IOException
+     */
     @FXML
     public void handleButtonAction() throws IOException {
         String fxmlFile = "/fxml/contact_view.fxml";
