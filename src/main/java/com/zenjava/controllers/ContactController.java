@@ -5,9 +5,10 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import org.apache.commons.lang.StringUtils;
 
 import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Controller for the contact view
@@ -43,6 +44,12 @@ public class ContactController {
             alert.setTitle("Informations manquantes");
             alert.setContentText("Il faut remplir toutes les cases");
         }
+        else if (!isAMail(adresse.getCharacters().toString())){
+            alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Mauvaise information");
+            alert.setContentText("Mauvais format de mail");
+        }
+
         else {
             alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText("Message envoyé");
@@ -51,20 +58,9 @@ public class ContactController {
     }
 
     private boolean isAMail(String texte){
-        boolean deuxPoints = false;
-        String[] texte2 = texte.split("@");
-        if (texte2.length!=2) return false;
-        if (texte2[texte2.length-1]==".") return false;
-        for (int i=0;i<texte2.length;i++){
-            if (deuxPoints==true && texte2[i]==".") return false;
-            if (texte2[i]==".") deuxPoints = true;
-            else deuxPoints = false;
-        }
-        String[] texte3 = texte2[1].split(".");
-        if (texte3.length!=2) return false;
-        if (!StringUtils.isAlpha(texte3[0])) return false;
-        if (!StringUtils.isAlpha(texte3[1])) return false;
-        return true;
+        Pattern p = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}$");
+        Matcher m = p.matcher(texte.toUpperCase());
+        return m.matches();
 
     }
 }
