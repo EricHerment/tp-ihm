@@ -16,9 +16,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -47,14 +49,14 @@ public class HomeController {
     @FXML
     private Button contactButton;
 
-    private MainApp mainApp;
-
     @FXML
     private void initialize() {
         ObservableList<Product> productsList = FXCollections.observableArrayList();
         ObservableList<String> choiceList = FXCollections.observableArrayList();
+
         try {
             productsList.setAll(new ProductParser().getProducts());
+            choiceList.setAll(new ProductParser().getCategories());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -67,46 +69,22 @@ public class HomeController {
                 showProductDetails(newValue);
             }
         });
-        try {
-            choiceList.setAll(new ProductParser().getCategories());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
         choiceBox.setItems(choiceList);
-        /*choiceBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+        choiceBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                if (newValue.equals("Categorie 2")) {
-                    showProductDetails(mainApp.pList2.get(0));
-                    mainApp.getObservableList().clear();
-                    mainApp.getObservableList().setAll(mainApp.pList2);
+                ObservableList<Product> newList = FXCollections.observableArrayList();
+                for (Product product : productsList) {
+                    if (product.getCategory().equals(newValue))
+                        newList.add(product);
                 }
-                if (newValue.equals("Categorie 1")){
-                    showProductDetails((mainApp.pList1.get(0)));
-                    mainApp.getObservableList().clear();
-                    mainApp.getObservableList().setAll(mainApp.pList1);
-                }
+                listView.setItems(newList);
             }
-        });*/
+        });
 
     }
 
-    /**
-     * permet de set toutes les caractéristiques d'un produit donné
-     * @param product
-     */
-    private void showProductDetails(Product product) {
-        productName.setText(product.getName());
-        productDescription.setText(product.getDescription());
-        productPrice.setText(product.getPrice());
-        productImage.setImage(product.getImage());
-    }
-
-
-    /**
-     * action effectué lorsqu'on appuie sur le bouton "contact", ça ouvre une nouvelle scène
-     * @throws IOException
-     */
     @FXML
     public void handleButtonAction() throws IOException {
         String fxmlFile = "/fxml/contact_view.fxml";
@@ -116,5 +94,14 @@ public class HomeController {
         stage.setTitle("Contact");
         stage.setScene(scene);
         stage.show();
+    }
+
+    private void showProductDetails(Product product) {
+        productName.setText(product.getName());
+        productDescription.setText(product.getDescription());
+        productPrice.setText(product.getPrice());
+        File file = new File(product.getImage());
+        Image image = new Image(file.toString());
+        productImage.setImage(image);
     }
 }

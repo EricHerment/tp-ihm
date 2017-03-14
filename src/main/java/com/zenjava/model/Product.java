@@ -13,14 +13,14 @@ public class Product {
     private StringProperty name;
     private StringProperty description;
     private StringProperty price;
-    private Image image;
+    private StringProperty image;
     private String category;
 
-    public Product(String name, String description, String price, Image image, String category) {
+    public Product(String name, String description, String price, String image, String category) {
         this.name = new SimpleStringProperty(name);
         this.description = new SimpleStringProperty(description);
         this.price = new SimpleStringProperty(price);
-        this.image = image;
+        this.image = new SimpleStringProperty(image);
         this.category = category;
     }
 
@@ -60,15 +60,19 @@ public class Product {
         this.price.set(price);
     }
 
-    public Image getImage() {
+    public String getCategory() {
+        return category;
+    }
+
+    public String getImage() {
+        return image.get();
+    }
+
+    public StringProperty imageProperty() {
         return image;
     }
 
-    public void setImage(Image image) {
-        this.image = image;
-    }
-
-    public String getCategory() {
-        return category;
+    public void setImage(String image) {
+        this.image.set(image);
     }
 }
