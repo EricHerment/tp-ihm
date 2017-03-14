@@ -93,7 +93,7 @@ public class HomeController {
     public void handleButtonAction() throws IOException {
         String fxmlFile = "/fxml/contact_view.fxml";
         FXMLLoader loader = new FXMLLoader();
-        Scene scene = new Scene(loader.load(getClass().getResourceAsStream(fxmlFile)),1200,800);
+        Scene scene = new Scene(loader.load(getClass().getResourceAsStream(fxmlFile)),600,400);
         Stage stage = new Stage();
         stage.setTitle("Contact");
         stage.setScene(scene);

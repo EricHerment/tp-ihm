@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -31,9 +32,9 @@
             <Label text="Adresse mail :" translateX="80.0" translateY="-4.0" />
             <Label text="Sujet :" translateX="120.0" translateY="-3.0" GridPane.rowIndex="1" />
             <Label text="Message :" textAlignment="RIGHT" translateX="100.0" translateY="-55.0" GridPane.rowIndex="2" />
-            <TextField fx:id="message" prefHeight="124.0" prefWidth="223.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="adresse" prefHeight="25.0" prefWidth="283.0" GridPane.columnIndex="1" />
             <TextField fx:id="sujet" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextArea fx:id="message" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
          </children>
       </GridPane>
       <ButtonBar layoutX="146.0" layoutY="313.0" prefHeight="40.0" prefWidth="200.0">
