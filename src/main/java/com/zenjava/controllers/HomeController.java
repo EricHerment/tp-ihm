@@ -93,10 +93,10 @@ public class HomeController {
     public void handleButtonAction() throws IOException {
         String fxmlFile = "/fxml/contact_view.fxml";
         FXMLLoader loader = new FXMLLoader();
-        Scene scene2 = new Scene(loader.load(getClass().getResourceAsStream(fxmlFile)),1200,800);
+        Scene scene = new Scene(loader.load(getClass().getResourceAsStream(fxmlFile)),1200,800);
         Stage stage = new Stage();
-        stage.setTitle("contact");
-        stage.setScene(scene2);
+        stage.setTitle("Contact");
+        stage.setScene(scene);
         stage.show();
     }
 }
